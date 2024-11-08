@@ -17,9 +17,11 @@ $ ldd regularity
 ```
 Analizzo il binario su Binary Ninja:
 ![bin_start](https://github.com/user-attachments/assets/7dd2aec3-02ed-4ffc-ae8d-f8025f8a39de)
+
 Il flusso sembra essere chiaro, dentro _start ci sono 3 chiamate a funzione: write, read e ancora write.
 Analizzo le funzioni chiamate:
 ![bin_read_write](https://github.com/user-attachments/assets/95e54092-b44e-47aa-8f80-04dcf098d7bb)
+
 Nella funzione read sembra che vengano liberati 0x100 bytes per far spazio al buffer. Quando la syscall viene chiamata per leggere il buffer tuttavia, vengono passati 0x110 bytes!
 Per sfruttare questo overflow e aggirare il problema ASLR è necessario sapre quale sarà l'indirizzo dove viene locato il buffer:
 ```
