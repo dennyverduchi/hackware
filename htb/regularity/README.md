@@ -50,7 +50,9 @@ rsi            0x7fffffffdd78      140737488346488
 ...
 ```
 rsi punta proprio all'indirizzo del buffer! Come abbiamo visto in _start rsi viene utilizzato per uscire con l'istruzione:
+
 mov rsi, exit
 jmp rsi {exit}
+
 A questo punto posso sovrascrivere il puntatore di uscita della funzione 'read' (0x40106e) con l'indirizzo di 'jmp rsi' per saltare alla mia shellcode.
 ![Screenshot_2024-11-07_17-30-25](https://github.com/user-attachments/assets/a06d0f81-3b05-4808-b0ad-45c1155613fa)
