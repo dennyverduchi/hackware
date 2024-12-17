@@ -1,2 +1,2 @@
-# lolware
+# hackware
 Tentativi di exploit su varie macchine...
