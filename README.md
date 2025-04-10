@@ -1,2 +1,2 @@
 # hackware
-Tentativi di exploit su varie macchine...
+Useful scripts or stuff for challenges.. 
